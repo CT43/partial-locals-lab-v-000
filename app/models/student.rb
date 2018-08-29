@@ -17,6 +17,7 @@ class Student < ActiveRecord::Base
   def self.search(search)
   
     names = self.all.collect {|student| student.name}
+    binding.pry
     if names.include?("search")
       self.find_by(name: "search")
     else
