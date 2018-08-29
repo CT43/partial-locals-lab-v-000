@@ -15,8 +15,7 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(search)
+    binding.pry
     self.all.names.include?("search")
-      
-
   end
 end
