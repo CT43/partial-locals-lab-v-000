@@ -15,12 +15,12 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(search)
-    binding.pry
+  
     names = self.all.collect {|student| student.name}
-    if names.include?("search") 
-      self.find_by(name: "search") 
-    else 
-      self.all 
+    if names.include?("search")
+      self.find_by(name: "search")
+    else
+      self.all
     end
   end
 end
