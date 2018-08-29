@@ -16,8 +16,6 @@ class Student < ActiveRecord::Base
 
   def self.search(search)
       self.all.find{|student| student.name.include?("%#{search}%")}
-    else
-      self.all
-    end
+
   end
 end
