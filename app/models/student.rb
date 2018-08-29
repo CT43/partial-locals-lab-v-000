@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
 
     names = self.all.collect {|student| student.name}
     binding.pry
-    if names.include?("search")
+    if names.search("search")
       self.find_by(name: "search")
     else
       self.all
